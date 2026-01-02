@@ -1,0 +1,79 @@
+{
+  "name": "Revenue by month and user",
+  "deleted": false,
+  "entityType": "Opportunity",
+  "type": "Grid",
+  "data": null,
+  "columns": [
+    "SUM:amountConverted"
+  ],
+  "groupBy": [
+    "MONTH:closeDate",
+    "assignedUser"
+  ],
+  "orderBy": [
+    "ASC:assignedUser"
+  ],
+  "orderByList": null,
+  "filters": null,
+  "filtersDataList": [
+    {
+      "id": "449f09b3eb3d",
+      "name": "stage",
+      "params": {
+        "type": "in",
+        "value": [
+          "Closed Won"
+        ],
+        "data": {
+          "type": "anyOf",
+          "valueList": [
+            "Closed Won"
+          ]
+        },
+        "field": "stage",
+        "attribute": "stage"
+      }
+    }
+  ],
+  "runtimeFilters": [
+    "closeDate"
+  ],
+  "filtersData": null,
+  "columnsData": null,
+  "chartColorList": null,
+  "chartColors": null,
+  "chartColor": "#6FA8D6",
+  "chartDataList": null,
+  "chartOneColumns": [],
+  "chartOneY2Columns": [],
+  "description": null,
+  "chartType": "Line",
+  "depth": null,
+  "isInternal": false,
+  "emailSendingInterval": null,
+  "emailSendingSettingMonth": null,
+  "emailSendingSettingDay": null,
+  "emailSendingSettingWeekdays": null,
+  "emailSendingTime": null,
+  "emailSendingLastDateSent": null,
+  "emailSendingDoNotSendEmptyReport": false,
+  "applyAcl": false,
+  "joinedReportDataList": null,
+  "categoryId": "examples",
+  "categoryName": "Examples",
+  "createdByName": "System",
+  "modifiedByName": null,
+  "assignedUserId": null,
+  "assignedUserName": null,
+  "teamsIds": [],
+  "teamsNames": {},
+  "portalsIds": [],
+  "portalsNames": {},
+  "emailSendingUsersIds": [],
+  "emailSendingUsersNames": {},
+  "joinedReportsIds": [],
+  "joinedReportsNames": {},
+  "joinedReportsColumns": {},
+  "isStarred": false
+}

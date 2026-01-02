@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/espocrm/espocrm.git"
   },
+  "type": "module",
   "scripts": {
     "postinstall": "node js/scripts/postinstall-cleanup && node js/scripts/prepare-lib-original.js",
     "build": "grunt",
@@ -14,7 +15,10 @@
     "build-frontend": "grunt internal",
     "sa": "php vendor/bin/phpstan",
     "unit-tests": "php vendor/bin/phpunit ./tests/unit",
-    "integration-tests": "php vendor/bin/phpunit ./tests/integration"
+    "integration-tests": "php vendor/bin/phpunit ./tests/integration",
+    "export:reports": "node scripts/export-reports.js",
+    "import:reports:prod": "node scripts/import-reports.js prod",
+    "import:reports:dev": "node scripts/import-reports.js dev"
   },
   "homepage": "https://www.espocrm.com",
   "author": "EspoCRM, Inc.",
@@ -72,6 +76,7 @@
     "cropper": "^0.7.9",
     "devbridge-autocomplete": "^1.4.11",
     "dompurify": "^3.2.4",
+    "dotenv": "^17.2.3",
     "espo-funnel-chart": "github:yurikuzn/espo-funnel-chart#1.1.0",
     "exif-js": "^2.3.0",
     "flotr2": "github:yurikuzn/flotr2#0.1.3",

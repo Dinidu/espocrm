@@ -86,6 +86,74 @@ services:
     depends_on:
       - espocrm
 
+  # Data importer - imports reports and workflows from JSON files on startup
+  # Uses admin user/password authentication (required for workflow access)
+  espocrm-data-importer:
+    image: node:18-alpine
+    container_name: espocrm-data-importer
+    restart: "no"
+    environment:
+      ESPO_URL: http://espocrm:80
+      ESPO_USER: ${ADMIN_USER:-admin}
+      ESPO_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+    volumes:
+      - ./data/scripts:/app/scripts:ro
+      - ./data/reports:/app/reports:ro
+      - ./data/workflows:/app/workflows:ro
+    working_dir: /app
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "EspoCRM Data Importer"
+        echo "====================="
+        
+        # Wait for EspoCRM to be ready
+        echo "Waiting for EspoCRM to be ready..."
+        max_attempts=60
+        attempt=1
+        
+        while [ $$attempt -le $$max_attempts ]; do
+          if wget -q --spider "$$ESPO_URL/api/v1/App/user" 2>/dev/null; then
+            echo "EspoCRM is ready!"
+            break
+          fi
+          echo "  Attempt $$attempt/$$max_attempts - waiting..."
+          sleep 5
+          attempt=$$((attempt + 1))
+        done
+        
+        if [ $$attempt -gt $$max_attempts ]; then
+          echo "ERROR: EspoCRM did not become ready in time"
+          exit 1
+        fi
+        
+        # Import reports if JSON files exist
+        if [ -d /app/reports ] && [ "$$(find /app/reports -maxdepth 1 -name '*.json' ! -name '_*' 2>/dev/null | wc -l)" -gt 0 ]; then
+          echo ""
+          echo "Importing Reports..."
+          cd /app/scripts
+          node import-reports.js --url="$$ESPO_URL" --user="$$ESPO_USER" --password="$$ESPO_PASSWORD" || echo "Report import failed"
+        else
+          echo "No report files to import."
+        fi
+        
+        # Import workflows if JSON files exist  
+        if [ -d /app/workflows ] && [ "$$(find /app/workflows -maxdepth 1 -name '*.json' ! -name '_*' 2>/dev/null | wc -l)" -gt 0 ]; then
+          echo ""
+          echo "Importing Workflows..."
+          cd /app/scripts
+          node import-workflows.js --url="$$ESPO_URL" --user="$$ESPO_USER" --password="$$ESPO_PASSWORD" || echo "Workflow import failed"
+        else
+          echo "No workflow files to import."
+        fi
+        
+        echo ""
+        echo "Data import complete!"
+    networks:
+      - espocrm-network
+    depends_on:
+      - espocrm
+
 volumes:
   espocrm-db-data:
     driver: local

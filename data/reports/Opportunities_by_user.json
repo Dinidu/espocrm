@@ -1,0 +1,84 @@
+{
+  "name": "Opportunities by user",
+  "deleted": false,
+  "entityType": "Opportunity",
+  "type": "Grid",
+  "data": null,
+  "columns": [
+    "COUNT:id",
+    "SUM:amountWeightedConverted",
+    "SUM:amountConverted"
+  ],
+  "groupBy": [
+    "assignedUser"
+  ],
+  "orderBy": [
+    "ASC:assignedUser"
+  ],
+  "orderByList": null,
+  "filters": null,
+  "filtersDataList": [
+    {
+      "id": "d955e51247b15",
+      "name": "stage",
+      "params": {
+        "type": "in",
+        "value": [
+          "Prospecting",
+          "Qualification",
+          "Proposal/Price Quote",
+          "Negotiation/Review"
+        ],
+        "data": {
+          "type": "anyOf",
+          "valueList": [
+            "Prospecting",
+            "Qualification",
+            "Proposal/Price Quote",
+            "Negotiation/Review"
+          ]
+        },
+        "field": "stage",
+        "attribute": "stage"
+      }
+    }
+  ],
+  "runtimeFilters": null,
+  "filtersData": null,
+  "columnsData": null,
+  "chartColorList": null,
+  "chartColors": null,
+  "chartColor": "#6FA8D6",
+  "chartDataList": null,
+  "chartOneColumns": [],
+  "chartOneY2Columns": [],
+  "description": null,
+  "chartType": "BarVertical",
+  "depth": null,
+  "isInternal": false,
+  "emailSendingInterval": null,
+  "emailSendingSettingMonth": null,
+  "emailSendingSettingDay": null,
+  "emailSendingSettingWeekdays": null,
+  "emailSendingTime": null,
+  "emailSendingLastDateSent": null,
+  "emailSendingDoNotSendEmptyReport": false,
+  "applyAcl": false,
+  "joinedReportDataList": null,
+  "categoryId": "examples",
+  "categoryName": "Examples",
+  "createdByName": "System",
+  "modifiedByName": null,
+  "assignedUserId": null,
+  "assignedUserName": null,
+  "teamsIds": [],
+  "teamsNames": {},
+  "portalsIds": [],
+  "portalsNames": {},
+  "emailSendingUsersIds": [],
+  "emailSendingUsersNames": {},
+  "joinedReportsIds": [],
+  "joinedReportsNames": {},
+  "joinedReportsColumns": {},
+  "isStarred": false
+}
