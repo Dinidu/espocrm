@@ -1,0 +1,12 @@
+{
+    "types": {
+        "NewVsExistingClientLead": "New vs Existing Client Lead Report"
+    },
+    "labels": {
+        "NewVsExistingClientLead": "New vs Existing Client Lead Report"
+    },
+    "descriptions": {
+        "NewVsExistingClientLead": "Analyze acquisition vs cross-selling by comparing new and existing customer leads, grouped by product type with conversion metrics."
+    }
+}
+

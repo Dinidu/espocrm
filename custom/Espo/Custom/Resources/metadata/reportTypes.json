@@ -1,0 +1,7 @@
+{
+    "NewVsExistingClientLead": {
+        "handlerClassName": "Espo\\Custom\\Tools\\Report\\NewVsExistingClientLead",
+        "view": "custom:views/report/record/new-vs-existing-client-lead"
+    }
+}
+
