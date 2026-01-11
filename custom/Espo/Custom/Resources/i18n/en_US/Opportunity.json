@@ -75,7 +75,8 @@
         "cSourceLead": "Source Lead",
         "contact": "Contact",
         "cCLoanStage": "Loan Stage",
-        "teams": "Branch"
+        "teams": "Branch",
+        "cOpportunityID": "Opportunity ID"
     },
     "options": {
         "cInterestedProductType": {

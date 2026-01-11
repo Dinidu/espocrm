@@ -19,16 +19,14 @@
                     "name": "probability"
                 },
                 {
-                    "name": "closeDate"
+                    "name": "cSourceLead"
                 }
             ],
             [
                 {
                     "name": "contact"
                 },
-                {
-                    "name": "cSourceLead"
-                }
+                false
             ]
         ],
         "dynamicLogicVisible": null,
