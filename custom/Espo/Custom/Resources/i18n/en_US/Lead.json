@@ -17,7 +17,7 @@
         "cExistingMonthlyObligationsConverted": "Existing Monthly Obligations (EMI, Rent, etc) (Converted)",
         "cBankName": "Bank Name",
         "cAccountNo": "Account No",
-        "cBranch": "Branch",
+        "cBranch": "Branch-bk",
         "cInterestedLoan": "Product Type",
         "cDesiredLoanAmount": "Desired Loan Amount",
         "cDesiredLoanAmountCurrency": "Desired Loan Amount (Currency)",
@@ -83,7 +83,8 @@
         "cLeadTargetDate": "Lead Target Date",
         "cLeadRemainingTime": "Lead Remaining Time",
         "cLeadSLAStatus": "Lead SLA Status",
-        "cLeadPriority": "Lead Priority"
+        "cLeadPriority": "Lead Priority",
+        "teams": "Branch"
     },
     "links": {
         "cContact": "Existing Customer"
