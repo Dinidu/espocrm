@@ -1,5 +1,9 @@
 [
     {
+        "name": "cOpportunityNumber",
+        "width": 16
+    },
+    {
         "name": "name",
         "link": true
     },
@@ -8,13 +12,21 @@
         "width": 15
     },
     {
-        "name": "assignedUser",
-        "width": 12
+        "name": "cCLoanStage",
+        "width": 16
+    },
+    {
+        "name": "cDaysInPipeline",
+        "width": 16
     },
     {
         "name": "amount",
         "width": 10,
         "align": "right"
+    },
+    {
+        "name": "assignedUser",
+        "width": 12
     },
     {
         "name": "createdAt",

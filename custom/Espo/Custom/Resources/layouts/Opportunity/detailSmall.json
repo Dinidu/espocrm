@@ -1,0 +1,44 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                }
+            ],
+            [
+                {
+                    "name": "account"
+                }
+            ],
+            [
+                {
+                    "name": "stage"
+                },
+                {
+                    "name": "closeDate"
+                }
+            ],
+            [
+                {
+                    "name": "amount"
+                },
+                {
+                    "name": "cInterestRate"
+                }
+            ],
+            [
+                {
+                    "name": "contacts"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                }
+            ]
+        ],
+        "style": "default",
+        "label": ""
+    }
+]

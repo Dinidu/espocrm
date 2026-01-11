@@ -9,12 +9,6 @@
         "name": "stage"
     },
     {
-        "name": "cCalculatedDTI"
-    },
-    {
-        "name": "cCalculatedFOIR"
-    },
-    {
         "name": "cLtvRatio"
     },
     {

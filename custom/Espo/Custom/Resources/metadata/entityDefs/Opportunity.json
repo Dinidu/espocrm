@@ -5,7 +5,8 @@
             "maxLength": 20,
             "readOnly": true,
             "unique": true,
-            "isCustom": true
+            "isCustom": true,
+            "options": []
         },
         "cMonthlyIncome": {
             "type": "currency",
@@ -42,18 +43,22 @@
             "isCustom": true
         },
         "cFOIR": {
+            "notNull": false,
             "type": "float",
             "min": 0,
             "max": 100,
-            "tooltip": "FOIR % - auto-filled from Lead",
-            "isCustom": true
+            "tooltip": false,
+            "isCustom": true,
+            "readOnly": true
         },
         "cDTI": {
+            "notNull": false,
             "type": "float",
             "min": 0,
             "max": 100,
-            "tooltip": "DTI % - auto-filled from Lead",
-            "isCustom": true
+            "tooltip": false,
+            "isCustom": true,
+            "readOnly": true
         },
         "cInterestedProductType": {
             "type": "enum",
@@ -205,8 +210,8 @@
         },
         "cApplicantMonthlyIncome": {
             "type": "currency",
-            "required": true,
-            "tooltip": "Copied from Lead during conversion",
+            "required": false,
+            "tooltip": true,
             "isCustom": true
         },
         "cApplicantEmploymentType": {
@@ -608,6 +613,15 @@
                 "Closed Won": "success",
                 "Closed Lost": "info"
             }
+        },
+        "cOpportunityID": {
+            "type": "autoincrement",
+            "autoincrement": true,
+            "unique": true,
+            "isCustom": true
+        },
+        "closeDate": {
+            "required": false
         }
     },
     "links": {
